@@ -1,0 +1,26 @@
+<div class="card col-md-3 col-sm-3 col-lg-3 col-xl-4" style="width: 18rem;">
+  <img src="{{ product.picture }}" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text" style="display: block">
+      {{ product.description }}
+    </p>
+    <p>#{{ product.tags }}</p>
+    <a href="#" class="btn btn-primary">{{ product.price | currency }}</a>
+    <button class="btn btn-warning">BY</button>
+  </div>
+</div>
+
+<!-- <a href="#" class="btn btn-primary">{{ product.price | shortDesc: 60:true }}</a> 
+  write your own pipe
+-->
+
+<!-- function shortDesc(value, length,isShort){
+  
+  if(isShort){
+    return value.shortened(0,length)
+  }
+  else{
+    return value
+  }
+} -->
