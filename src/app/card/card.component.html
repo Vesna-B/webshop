@@ -7,7 +7,7 @@
     </p>
     <p>#{{ product.tags }}</p>
     <a href="#" class="btn btn-primary">{{ product.price | currency }}</a>
-    <button class="btn btn-warning">BY</button>
+    <button class="btn btn-warning" (click)="byProduct(product)">BY</button>
   </div>
 </div>
 

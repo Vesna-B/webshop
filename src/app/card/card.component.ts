@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Product } from "../product";
+import { ProductService } from "../product.service";
 
 @Component({
   selector: "app-card",
@@ -8,8 +9,7 @@ import { Product } from "../product";
 })
 export class CardComponent implements OnInit {
   @Input() product: Product;
-
-  constructor() {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.product.description =
@@ -20,4 +20,8 @@ export class CardComponent implements OnInit {
   // fixPrice(): void {
   //   this.product.price = +this.product.price.toFixed(2);
   // }
+
+  byProduct(): void {
+    this.productService.byProduct(this.product); //call function from service
+  }
 }
