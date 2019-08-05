@@ -10,13 +10,12 @@ export class HeaderComponent implements OnInit {
   @Input() totalPriceInCart = 0;
   _subjectTotalPriceInCart;
 
-  constructor(private productService: ProductService) {
-    this._subjectTotalPriceInCart = this.productService.cartPrice$.subscribe(
-      value => (this.totalPriceInCart = value) //value is the value that we send through the next
-    );
-  }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.totalPriceInCart = this.productService.totalPrice;
+    this._subjectTotalPriceInCart = this.productService.cartPrice$.subscribe(
+      value => (this.totalPriceInCart = value) //value is the value that we send through the next from productService
+    );
   }
 }

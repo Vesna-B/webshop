@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  <img [src]="(product | async)?.picture" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ (product | async)?.name }}</h5>
+    <p class="card-text">
+      {{ (product | async)?.description }}
+    </p>
+    <button class="btn btn-primary">
+      {{ (product | async)?.price | currency }}
+    </button>
+    <button class="btn btn-warning">BY</button>
+  </div>
+</div>

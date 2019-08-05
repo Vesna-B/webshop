@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Product } from "../product";
+import { Observable } from "rxjs";
+import { filter } from "rxjs/operators";
 import { ProductService } from "../product.service";
 
 @Component({
@@ -14,12 +16,7 @@ export class CardComponent implements OnInit {
   ngOnInit() {
     this.product.description =
       this.product.description.substring(0, 100) + "...";
-    //this.fixPrice();
   }
-
-  // fixPrice(): void {
-  //   this.product.price = +this.product.price.toFixed(2);
-  // }
 
   byProduct(): void {
     this.productService.byProduct(this.product); //call function from service
